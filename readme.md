@@ -20,3 +20,4 @@ To run the app in your local environment, please follow the instruction:
 ## Note
 
 - To simplify the routes and to not use relative paths, I am using alias for `Domain` and `lib`
+- I use a template engine to maintain consistency in your codebase, reducing repetition, and improving productivity in my development process.

@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { RootStackParamList } from "./navigation.models";
+import { DashboardScreen } from "@domain/activity/dashboardScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -10,11 +11,11 @@ export const Navigation = () => {
   const renderNavigation = () => {
     return (
       <>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Home"
           options={{ headerShown: false }}
           component={DashboardScreen}
-        /> */}
+        />
       </>
     );
   };
