@@ -16,3 +16,7 @@ To run the app in your local environment, please follow the instruction:
    - Pressing `a` will open in an Android Emulator or connected device.
    - Pressing `i` will open in an iOS Simulator.
    - Pressing `w` will open in a web browser. Expo supports all major browsers.
+
+## Note
+
+- To simplify the routes and to not use relative paths, I am using alias for `Domain` and `lib`
