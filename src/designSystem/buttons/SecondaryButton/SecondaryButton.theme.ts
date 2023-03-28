@@ -11,13 +11,13 @@ type SecondaryButtonTheme = {
 
 export const secondaryButtonTheme = createComponentTheme<SecondaryButtonTheme>({
   "factorial-dark": {
-    backgroundColor: palette.cian[0],
-    disabledBackgroundColor: `${palette.cian[0]}${alpha[30]}`,
+    backgroundColor: palette.cyan[0],
+    disabledBackgroundColor: `${palette.cyan[0]}${alpha[30]}`,
     disabledFontColor: palette.grey[4],
   },
-  "progress-light": {
-    backgroundColor: palette.cian[0],
-    disabledBackgroundColor: `${palette.cian[0]}${alpha[30]}`,
+  "factorial-light": {
+    backgroundColor: palette.cyan[0],
+    disabledBackgroundColor: `${palette.cyan[0]}${alpha[30]}`,
     disabledFontColor: palette.grey[4],
   },
 });

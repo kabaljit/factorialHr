@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components/native';
-import { Button } from '../Button';
+import styled, { css } from "styled-components/native";
+import { Button } from "../Button";
 
-import { secondaryButtonTheme } from './SecondaryButton.theme';
+import { secondaryButtonTheme } from "./SecondaryButton.theme";
 
 export const SecondaryButtonContainer = styled.View`
   background-color: ${secondaryButtonTheme.backgroundColor};
@@ -9,6 +9,7 @@ export const SecondaryButtonContainer = styled.View`
 
 export const StyledButton = styled(Button)`
   background-color: ${secondaryButtonTheme.backgroundColor};
+
   ${(p) =>
     p.disabled &&
     css`

@@ -1,22 +1,31 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from 'react';
-import { TextInput as RNPaperTextInput } from 'react-native-paper';
+import React, { useState } from "react";
+import { TextInput as RNPaperTextInput } from "react-native-paper";
 
-import useUid from '@lib/hooks/useUid';
-import { tokens } from '@theme/tokens';
+import useUid from "@lib/hooks/useUid";
+import { tokens } from "@theme/tokens";
 
-import { inputStyle, transparentInputStyle } from './TextInput.styles';
-import { TextInputProps } from './TextInput.models';
-import { textInputTheme } from './TextInput.theme';
+import { inputStyle, transparentInputStyle } from "./TextInput.styles";
+import { TextInputProps } from "./TextInput.models";
+import { textInputTheme } from "./TextInput.theme";
 
-function TextInput({ name, transparent, password, errorMessage, label, error, style, ...rest }: TextInputProps) {
-  const uid = useUid('input', name);
+function TextInput({
+  name,
+  transparent,
+  password,
+  errorMessage,
+  label,
+  error,
+  style,
+  ...rest
+}: TextInputProps) {
+  const uid = useUid("input", name);
   const [secureTextEntry, setSecureTextEntry] = useState(password);
 
   return (
     <RNPaperTextInput
       style={[transparent ? transparentInputStyle : inputStyle, style]}
-      activeUnderlineColor={tokens.palette.cian[0]}
+      activeUnderlineColor={tokens.palette.cyan[0]}
       testID={uid}
       theme={{ roundness: 8 }}
       underlineStyle={{ marginLeft: 12, marginRight: 12 }}
@@ -30,7 +39,7 @@ function TextInput({ name, transparent, password, errorMessage, label, error, st
         ? {
             right: (
               <RNPaperTextInput.Icon
-                icon={secureTextEntry ? 'eye' : 'eye-off'}
+                icon={secureTextEntry ? "eye" : "eye-off"}
                 onPress={() => setSecureTextEntry(!secureTextEntry)}
               />
             ),

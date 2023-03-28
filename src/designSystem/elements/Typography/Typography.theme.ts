@@ -13,7 +13,7 @@ export const sizeMap: SizeMap = {
 export const textColours: { [key in ThemeName]: TextColours } = {
   "factorial-light": {
     primary: tokens.palette.white[0],
-    secondary: tokens.palette.grey[7],
+    secondary: tokens.palette.midnightBlue[0],
     link: tokens.palette.skyBlue[8],
     disabled: tokens.palette.grey[6],
     title: tokens.palette.seaGreen[5],
