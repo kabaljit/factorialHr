@@ -3,6 +3,214 @@
  */
 
 const palette = {
+  cyan: {
+    /** 3ADDBB */
+    0: "#15262E",
+  },
+  mango: {
+    /**
+     * #FFB900
+     */
+    0: "#FFB900",
+    /**
+     * #FFD566
+     */
+    1: "#FFD566",
+  },
+  midnightBlue: {
+    /**
+     * #262835
+     */
+    0: "#262835",
+    /**
+     * #090B18
+     */
+    1: "#090B18",
+    /**
+     * #090a13
+     */
+    2: "#090a13",
+    /**
+     * #303951
+     */
+    3: "#303951",
+  },
+  skyBlue: {
+    /**
+     * #F7FAFD
+     */
+    0: "#F7FAFD",
+    /**
+     * #E5F2FC
+     */
+    1: "#E5F2FC",
+    /**
+     * #C0DEF8
+     */
+    2: "#C0DEF8",
+    /**
+     * #99CAF4
+     */
+    3: "#99CAF4",
+    /**
+     * #75B6EF
+     */
+    4: "#75B6EF",
+    /**
+     * #5DA6EC
+     */
+    5: "#5DA6EC",
+    /**
+     * #4C97E8
+     */
+    6: "#4C97E8",
+    /**
+     * #4689DA
+     */
+    7: "#4267B2",
+    /**
+     * #3871C2
+     */
+    8: "#3871C2",
+    /**
+     * #3260B0
+     */
+    9: "#3260B0",
+    /**
+     * #EDF7FF
+     */
+    10: "#EDF7FF",
+  },
+  seaGreen: {
+    /**
+     * #D5F1F3
+     */
+    0: "#D5F1F3",
+    /**
+     * #C1EAED
+     */
+    1: "#C1EAED",
+    /**
+     * #ACE3E7
+     */
+    2: "#ACE3E7",
+    /**
+     * #9CDEE1
+     */
+    3: "#9CDEE1",
+    /**
+     * #82D5DA
+     */
+    4: "#82D5DA",
+    /**
+     * #6DCDD3
+     */
+    5: "#6DCDD3",
+    /**
+     * #59C7CE
+     */
+    6: "#59C7CE",
+    /**
+     * #2FB9C2
+     */
+    7: "#2FB9C2",
+    /**
+     * #238B92
+     */
+    8: "#238B92",
+    /**
+     * #185D61
+     */
+    9: "#185D61",
+  },
+  grey: {
+    /**
+     * #F8F8F8
+     */
+    0: "#F8F8F8",
+    /**
+     * #EDEDF4
+     */
+    1: "#EDEDF4",
+    /**
+     * #E1E1EA
+     */
+    2: "#E1E1EA",
+    /**
+     * #D4D5DD
+     */
+    3: "#D4D5DD",
+    /**
+     * #BCBCC9
+     */
+    4: "#BCBCC9",
+    /**
+     * #9699AA
+     */
+    5: "#9699AA",
+    /**
+     * #7C7E8D
+     */
+    6: "#7C7E8D",
+    /**
+     * #676978
+     */
+    7: "#676978",
+    /**
+     * #484A58
+     */
+    8: "#484A58",
+    /**
+     * #363842
+     */
+    9: "#363842",
+    /**
+     * #303951
+     */
+    10: "#303951",
+  },
+  red: {
+    /**
+     * #FFF2F1
+     */
+    0: "#FFF2F1",
+    /**
+     * #D95852
+     */
+    1: "#D95852",
+    /**
+     * #E89B97
+     */
+    2: "#E89B97",
+    /**
+     * #FF6C65
+     */
+    3: "#FF6C65",
+    /**
+     * #B3060F
+     */
+    4: "#B3060F",
+  },
+  yellow: {
+    /**
+     * #FFF8E4
+     */
+    0: "#FFF8E4",
+    /**
+     * #FF9C00
+     */
+    1: "#FF9C00",
+  },
+  green: {
+    /**
+     * #0BA866
+     */
+    0: "#0BA866",
+    /**
+     * #1C813F
+     */
+    1: "#1C813F",
+  },
   white: {
     /**
      * #FFFFFF
@@ -175,4 +383,93 @@ const sizes = {
   tab: `167px`,
 };
 
-export const tokens = { palette, sizes };
+const textSizes: Record<
+  | "none"
+  | "bodySmall"
+  | "inputLabelSmall"
+  | "body"
+  | "bodyLarge"
+  | "headingSmall"
+  | "headingMedium"
+  | "headingLarge",
+  {
+    fontSize: string;
+    lineHeight: string;
+  }
+> = {
+  /**
+   * None
+   */
+  none: {
+    fontSize: sizes[0],
+    lineHeight: sizes[0],
+  },
+  /**
+   * 10px
+   */
+  bodySmall: {
+    fontSize: sizes[10],
+    lineHeight: sizes[16],
+  },
+  /**
+   * 12px
+   */
+  inputLabelSmall: {
+    fontSize: sizes[12],
+    lineHeight: sizes[16],
+  },
+  /**
+   * 14px
+   */
+  body: {
+    fontSize: sizes[14],
+    lineHeight: sizes[24],
+  },
+  /**
+   * 16px
+   */
+  bodyLarge: {
+    fontSize: sizes[16],
+    lineHeight: sizes[28],
+  },
+  /**
+   * 20px
+   */
+  headingSmall: {
+    fontSize: sizes[20],
+    lineHeight: sizes[28],
+  },
+  /**
+   * 22px
+   */
+  headingMedium: {
+    fontSize: sizes[22],
+    lineHeight: sizes[32],
+  },
+  /**
+   * 28px
+   */
+  headingLarge: {
+    fontSize: sizes[28],
+    lineHeight: sizes[40],
+  },
+};
+
+const fontWeights = {
+  /**
+   * Normal - 400
+   */
+  normal: 400,
+  /**
+   * Bold - 700
+   */
+  bold: 700,
+};
+
+// Types
+export type Sizes = keyof typeof sizes;
+export type Palette = keyof typeof palette;
+export type TextSizes = keyof typeof textSizes;
+export type FontWeights = keyof typeof fontWeights;
+
+export const tokens = { palette, sizes, textSizes, fontWeights };
