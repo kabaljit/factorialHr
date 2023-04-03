@@ -9,6 +9,7 @@ import { LoginScreen } from "@domain/auth/loginScreen";
 import { auth } from "@lib/firebase";
 import { useAuthUser } from "@react-query-firebase/auth";
 import { View } from "react-native";
+import { HomeTab } from "./routes/homeTabNavigator";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -20,10 +21,10 @@ export const Navigation = () => {
   const renderNavigation = () => {
     return (
       <>
-        {/* Not Authorised */}
+        {/* Not Authorised Flow */}
         {!user?.data?.uid && NotAuthorisedFlow()}
 
-        {/* Authorised */}
+        {/* Authorised FLow*/}
         {user?.data?.uid && AuthorisedFlow()}
       </>
     );
@@ -69,7 +70,7 @@ function AuthorisedFlow() {
       <Stack.Screen
         name="Home"
         options={{ headerShown: false }}
-        component={DashboardScreen}
+        component={HomeTab}
       />
     </>
   );
