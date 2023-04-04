@@ -10,13 +10,12 @@ import { auth } from "@lib/firebase";
 import { useAuthUser } from "@react-query-firebase/auth";
 import { View } from "react-native";
 import { HomeTab } from "./routes/homeTabNavigator";
+import { AddActivityScreen } from "@domain/activity/addActivityScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const Navigation = () => {
   const user = useAuthUser(["user"], auth);
-
-  console.log("[Navigation] user?.data?.uid: ", user?.data, user.isLoading);
 
   const renderNavigation = () => {
     return (
@@ -71,6 +70,11 @@ function AuthorisedFlow() {
         name="Home"
         options={{ headerShown: false }}
         component={HomeTab}
+      />
+      <Stack.Screen
+        name="AddActivity"
+        options={{ headerShown: false }}
+        component={AddActivityScreen}
       />
     </>
   );
