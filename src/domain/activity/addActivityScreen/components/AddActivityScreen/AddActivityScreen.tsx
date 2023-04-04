@@ -232,7 +232,7 @@ export function AddActivityScreen() {
 
         <Box marginTop={14}>
           <TextInput
-            placeholder={t("input.endTimedate.placeholder")}
+            placeholder={t("input.endTime.placeholder")}
             value={values.endTime && format(values.endTime, "kk:mm")}
             error={errors.endTime && touched.endTime}
             errorMessage={errors.endTime}
