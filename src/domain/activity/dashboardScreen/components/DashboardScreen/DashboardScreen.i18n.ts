@@ -7,6 +7,7 @@ i18next.addResourceBundle("en-GB", "DashboardScreen", {
   title: "Dashboard",
   welcome:
     "sss to the best page in the world, leave your breath at the door please",
+  button: { addActivity: "Add Activity" },
 });
 
 export function useModuleTranslations() {
