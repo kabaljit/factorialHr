@@ -155,6 +155,7 @@ const BottomSheetAddCategory = forwardRef<
     <BottomSheet
       data-testid="bottom-sheet-add-category"
       ref={bottomSheetRef}
+      index={-1}
       snapPoints={snapPoints}
       enablePanDownToClose={true}
       style={{

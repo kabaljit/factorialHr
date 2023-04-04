@@ -7,7 +7,7 @@ i18next.addResourceBundle("en-GB", "CategoriesScreen", {
   title: "Categories",
   welcome:
     "Welcome to the best page in the world, leave your breath at the door please",
-  button: { addNewCategory: "Add new project" },
+  button: { addNewCategory: "Add new category" },
   emptyData:
     "There isn't any project yet, please start by adding a new project",
 });

@@ -33,7 +33,6 @@ import { tokens } from "@theme/tokens";
 export function CategoriesScreen() {
   const { t } = useModuleTranslations();
 
-  const [showBottomSheet, setShowBottomSheet] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState();
   const bottomSheetRef = useRef<BottomSheet>(null);
 
@@ -58,8 +57,6 @@ export function CategoriesScreen() {
     );
   }, []);
 
-  console.log("[CategoriesScreen]", categories.data);
-
   return (
     <>
       <SuperScreen background="white">
@@ -79,7 +76,6 @@ export function CategoriesScreen() {
         <SecondaryButton
           name="add-category"
           onPress={() => {
-            setShowBottomSheet(true);
             bottomSheetRef.current?.expand();
             setSelectedCategory(undefined);
           }}
@@ -92,12 +88,10 @@ export function CategoriesScreen() {
         </SecondaryButton>
       </SuperScreen>
 
-      {showBottomSheet && (
-        <BottomSheetAddCategory
-          ref={bottomSheetRef}
-          selectedCategory={selectedCategory}
-        />
-      )}
+      <BottomSheetAddCategory
+        ref={bottomSheetRef}
+        selectedCategory={selectedCategory}
+      />
     </>
   );
 }
