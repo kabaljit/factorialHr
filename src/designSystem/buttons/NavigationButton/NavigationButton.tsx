@@ -1,21 +1,30 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent } from "react";
 
-import useUid from '@lib/hooks/useUid';
-import { P } from '@designSystem/elements/Typography';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import ArrowLeft from '@assets/svg/ArrowLeft.svg';
-import { BackContainer, StyledNavigationButton } from './NavigationButton.styles';
-import { NavigationButtonProps } from './NavigationButton.models';
+import useUid from "@lib/hooks/useUid";
+import { P } from "@designSystem/elements/Typography";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+import {
+  BackContainer,
+  StyledNavigationButton,
+} from "./NavigationButton.styles";
+import { NavigationButtonProps } from "./NavigationButton.models";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 function NavigationButton(props: NavigationButtonProps) {
   const { name, inline, ...rest } = props;
-  const uid = useUid('navigation-button', name);
+  const uid = useUid("navigation-button", name);
   const { top: safeAreaInsetsTop } = useSafeAreaInsets();
 
   return (
-    <StyledNavigationButton data-testid={uid} $inline={inline} $safeAreaInsetsTop={safeAreaInsetsTop} {...rest}>
+    <StyledNavigationButton
+      data-testid={uid}
+      $inline={inline}
+      $safeAreaInsetsTop={safeAreaInsetsTop}
+      {...rest}
+    >
       <BackContainer>
-        <ArrowLeft />
+        <Ionicons name="arrow-back" size={24} color="black" />
       </BackContainer>
     </StyledNavigationButton>
   );
