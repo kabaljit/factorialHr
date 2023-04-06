@@ -25,6 +25,8 @@ import { Activity } from "@domain/activity/models";
 import Stats from "../Stats";
 import History from "../History";
 import { useGenerateReport } from "../lib/useGenerateReports";
+import { ActivityIndicator } from "react-native-paper";
+import { tokens } from "@theme/tokens";
 
 export function DashboardScreen() {
   const { t } = useModuleTranslations();
@@ -86,7 +88,10 @@ export function DashboardScreen() {
         </Box>
 
         <Box>
-          <History activities={activities.data} />
+          <History
+            activities={activities.data}
+            isLoading={activities.isLoading}
+          />
         </Box>
       </Box>
 

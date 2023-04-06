@@ -10,8 +10,10 @@ import { FlatList } from "react-native";
 import { Activity } from "@domain/activity/models";
 import Box from "@designSystem/layout/Box";
 import formatDistance from "date-fns/formatDistance";
+import { ActivityIndicator } from "react-native-paper";
+import { tokens } from "@theme/tokens";
 
-function History({ activities }: HistoryProps) {
+function History({ activities, isLoading }: HistoryProps) {
   const { t } = useModuleTranslations();
 
   const renderItem = useCallback(({ item }: { item: Activity }) => {
@@ -39,6 +41,12 @@ function History({ activities }: HistoryProps) {
           {t("title")}
         </P>
       </Header>
+
+      {isLoading && (
+        <Box margin={8}>
+          <ActivityIndicator color={tokens.palette.grey[3]} />
+        </Box>
+      )}
       <FlatList
         data={activities}
         renderItem={renderItem}

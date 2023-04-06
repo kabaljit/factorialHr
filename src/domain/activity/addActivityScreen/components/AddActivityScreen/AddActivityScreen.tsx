@@ -113,6 +113,7 @@ export function AddActivityScreen() {
           onSuccess(result) {
             console.log("onSuccess: ", result);
             action.setSubmitting(false);
+            navigation.navigate("Home");
           },
           onError(result) {
             console.log("onError: ", result);
