@@ -23,8 +23,6 @@ export const ButtonContainer = styled.View<{
 `;
 
 export const StyledButton = styled(TouchableOpacity)<ButtonProps>`
-
-
   /* display: flex; */
   justify-content: center;
   align-items: center;
@@ -38,7 +36,8 @@ export const StyledButton = styled(TouchableOpacity)<ButtonProps>`
   background-color: ${(p) =>
     buttonTheme[p.variant ?? "contained"].backgroundColor};
   height: ${tokens.sizes[48]};
-  width: ${(p) => (p.variant === "icon" ? tokens.sizes[20] : tokens.sizes.full)}
+  width: ${(p) =>
+    p.variant === "icon" ? tokens.sizes[20] : tokens.sizes.full};
   padding: 0 ${tokens.sizes[10]};
 
   font-size: ${(p) => tokens.textSizes[p.textSize ?? "body"].fontSize};

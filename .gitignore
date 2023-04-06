@@ -19,3 +19,5 @@ web-build/
 generate
 plopfile.js
 src/data
+
+.jest/cache

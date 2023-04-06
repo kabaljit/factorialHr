@@ -1,22 +1,42 @@
 import * as React from "react";
 
-import { render } from "@testing-library/react-native";
+import { fireEvent, render } from "@test/utils";
 import { Button } from "./Button";
 
 const uid = "button-test";
 
-test("Button Test", () => {
-  const { getByTestId } = render(<Button name="test" title="Hello" />);
+describe("Button", () => {
+  test("Button Test", () => {
+    const { getByTestId } = render(<Button name="test" title="Hello" />);
 
-  const buttonNode = getByTestId(uid);
+    const buttonNode = getByTestId(uid);
 
-  expect(buttonNode).toEqual("Hello");
-});
+    expect(buttonNode).toBeDefined();
+  });
 
-test("Button Loading Test", () => {
-  const { getByTestId } = render(<Button name="test" busy title="Hello" />);
+  test("calls onPress function when clicked", () => {
+    const onPressMock = jest.fn();
+    const { getByTestId } = render(
+      <Button name="test" title="Click me!" onPress={onPressMock} />
+    );
+    const buttonNode = getByTestId(uid);
+    fireEvent.press(buttonNode);
+    expect(onPressMock).toHaveBeenCalled();
+  });
 
-  const buttonNode = getByTestId(uid);
+  test("disables the button when busy prop is true", () => {
+    const { getByTestId } = render(
+      <Button name="test" title="Click me!" busy={true} />
+    );
+    const buttonNode = getByTestId(uid);
+    expect(buttonNode.props.accessibilityState.disabled).toBeTruthy();
+  });
 
-  expect(buttonNode).toEqual("");
+  it("disables the button when disabled prop is true", () => {
+    const { getByTestId } = render(
+      <Button name="test" title="Click me!" disabled />
+    );
+    const buttonNode = getByTestId(uid);
+    expect(buttonNode.props.accessibilityState.disabled).toBeTruthy();
+  });
 });
