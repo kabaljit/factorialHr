@@ -42,13 +42,15 @@ export function DashboardScreen() {
   );
 
   const activities = useFirestoreQueryData(
-    ["activitiess"],
+    ["activitiess", filter.time.start, filter.time.end],
     activitiesCollection,
     {
       subscribe: true,
       idField: "_id",
     }
   );
+
+  console.log("sdf", filter.time.start, filter.time.end, activities);
 
   const reports = useGenerateReport(activities?.data, reportType);
 
@@ -69,6 +71,17 @@ export function DashboardScreen() {
             selectedDate={reportDate}
           />
         </Box>
+
+        {/* <Box flexDirection="row">
+          <DateSlider
+            data={data}
+            onSelect={(date: Date) => {
+              console.log("df");
+              setReportDate(date);
+            }}
+            selectedDate={reportDate}
+          />
+        </Box> */}
 
         <Box>
           <Stats reports={reports} />

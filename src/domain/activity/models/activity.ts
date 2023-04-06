@@ -4,7 +4,7 @@ import { Timestamp } from "firebase/firestore";
 export interface Activity {
   category: string;
   title: string;
-  startTime: Timestamp;
-  endTime: Timestamp;
+  startTime: number;
+  endTime: number;
   _id: string;
 }

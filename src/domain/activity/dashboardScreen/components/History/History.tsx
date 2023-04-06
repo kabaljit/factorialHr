@@ -10,19 +10,13 @@ import { FlatList } from "react-native";
 import { Activity } from "@domain/activity/models";
 import Box from "@designSystem/layout/Box";
 import formatDistance from "date-fns/formatDistance";
-import intervalToDuration from "date-fns/intervalToDuration";
 
 function History({ activities }: HistoryProps) {
   const { t } = useModuleTranslations();
 
   const renderItem = useCallback(({ item }: { item: Activity }) => {
-    const { hours, minutes } = intervalToDuration({
-      start: new Date(item.startTime),
-      end: new Date(item.endTime),
-    });
-    formatDistance(new Date(item.startTime), new Date(item.endTime));
     return (
-      <HistoryItem>
+      <HistoryItem testID="history-item">
         <Box>
           <P color="secondary" weight="bold">
             {item.title}
@@ -40,7 +34,7 @@ function History({ activities }: HistoryProps) {
 
   return (
     <>
-      <Header>
+      <Header testID="history-title">
         <P weight="bold" color="secondary">
           {t("title")}
         </P>
@@ -48,7 +42,7 @@ function History({ activities }: HistoryProps) {
       <FlatList
         data={activities}
         renderItem={renderItem}
-        // keyExtractor={(item) => `${item.getTime()}`}
+        keyExtractor={(item, index) => `${index}`}
         ListEmptyComponent={EmptyState}
       />
     </>

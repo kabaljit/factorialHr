@@ -1,19 +1,18 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useContext } from "react";
 
-import { tokens } from '@theme/tokens';
-import { StyledText } from './Typography.styles';
-import { TextProps } from './Typography.models';
-import { sizeMap, textColours } from './Typography.theme';
+import { tokens } from "@theme/tokens";
+import { StyledText } from "./Typography.styles";
+import { TextProps } from "./Typography.models";
+import { sizeMap, textColours } from "./Typography.theme";
 
 const Text = forwardRef<HTMLParagraphElement, TextProps>((props, ref) => {
   const {
-    weight = 'normal',
+    weight = "normal",
     size,
     children,
     marginBottom = 0,
-    align = 'left',
-    color = 'primary',
+    align = "left",
+    color = "primary",
     inherit = false,
     showEllipsis = false,
     breakLine = false,
@@ -25,9 +24,8 @@ const Text = forwardRef<HTMLParagraphElement, TextProps>((props, ref) => {
   } = props;
 
   const { fontWeights, sizes } = tokens;
-  const { currentTheme } = useContext<string>(ThemeContext);
 
-  const internalSize = size ?? sizeMap[variant] ?? 'body';
+  const internalSize = size ?? sizeMap[variant] ?? "body";
 
   return (
     <StyledText
@@ -37,7 +35,7 @@ const Text = forwardRef<HTMLParagraphElement, TextProps>((props, ref) => {
       $weight={fontWeights[weight]}
       $marginBottom={sizes[marginBottom]}
       $textAlign={align}
-      $color={textColours[currentTheme][color]}
+      $color={textColours["factorial-light"][color]}
       $showEllipsis={showEllipsis}
       $noWrap={noWrap}
       $breakLine={breakLine}

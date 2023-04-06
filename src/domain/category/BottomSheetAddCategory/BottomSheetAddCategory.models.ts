@@ -1,3 +1,5 @@
+import { Category } from "../models";
+
 export interface BottomSheetAddCategoryProps {}
 
 export interface AddCategoryValues {
@@ -10,4 +12,9 @@ export interface AddCategoryValues {
    * Ttile of the category or project
    */
   title: string;
+
+  /*
+   * Values of current Category
+   */
+  selectedCategory: Category;
 }

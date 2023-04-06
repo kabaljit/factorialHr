@@ -15,7 +15,7 @@ module.exports = {
       require.resolve('jest-expo/src/preset/setup.js')
     ],
     transformIgnorePatterns: [
-        "node_modules/(?!(jest-)?@?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
+        "node_modules/(?!(jest-)?@?react-native|firebase|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
     ],
     testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
     testPathIgnorePatterns: [
