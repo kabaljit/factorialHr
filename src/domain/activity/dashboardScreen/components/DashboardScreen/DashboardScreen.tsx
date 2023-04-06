@@ -50,8 +50,6 @@ export function DashboardScreen() {
     }
   );
 
-  console.log("sdf", filter.time.start, filter.time.end, activities);
-
   const reports = useGenerateReport(activities?.data, reportType);
 
   return (

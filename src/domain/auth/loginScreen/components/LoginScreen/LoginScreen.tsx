@@ -24,19 +24,19 @@ export function LoginScreen() {
 
   const validationSchema = Yup.object().shape({
     email: Yup.string()
-      .required(t("input.email.error.required"))
-      .email(t("input.email.error.invalid")),
+      .required(t("input.email.error.required") as string)
+      .email(t("input.email.error.invalid") as string),
     password: Yup.string()
-      .required(t("input.password.error.required"))
-      .matches(/[a-z]/, t("input.password.error.lowercase"))
-      .matches(/[A-Z]/, t("input.password.error.uppercase"))
-      .min(8, t("input.password.error.length")),
+      .required(t("input.password.error.required") as string)
+      .matches(/[a-z]/, t("input.password.error.lowercase") as string)
+      .matches(/[A-Z]/, t("input.password.error.uppercase") as string)
+      .min(8, t("input.password.error.length") as string),
   });
 
   const onSubmit = useCallback(
     (values: LoginValues, { setSubmitting }: FormikHelpers<LoginValues>) => {
       setSubmitting(true);
-      console.log("sdf");
+
       signInEmailAndPassword(values.email, values.password);
       setSubmitting(true);
     },

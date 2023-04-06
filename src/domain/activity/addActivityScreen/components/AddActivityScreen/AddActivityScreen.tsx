@@ -146,7 +146,10 @@ export function AddActivityScreen() {
 
   const handleConfirm = useCallback(
     (date: Date) => {
-      console.warn("A date has been picked: ", date);
+      console.log(
+        "[AddActivityScreen] On cofirm, a date has been picked: ",
+        date
+      );
       setFieldValue(selectedDatePickerInfo.field, date);
       hideDatePicker();
     },

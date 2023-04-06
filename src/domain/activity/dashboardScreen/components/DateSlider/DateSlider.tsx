@@ -12,25 +12,34 @@ import isEqual from "date-fns/isEqual";
 
 function DateSlider({ data, onSelect, selectedDate }: DateSliderProps) {
   const { t } = useModuleTranslations();
-  // TODO: Fixed the active state
 
-  const renderItem = useCallback(({ item }: { item: Date }) => {
-    const active = isEqual(item, selectedDate);
+  const [selectedId, setSelectedId] = useState(
+    data.findIndex(
+      (day) => format(selectedDate, "dd/MM/yyyy") === format(day, "dd/MM/yyyy")
+    )
+  );
 
-    return (
-      <DateWrapper
-        $active={active}
-        onPress={() => {
-          console.log("Pressed", item), onSelect(item);
-        }}
-      >
-        <P weight="bold" color={active ? "secondary" : "primary"}>
-          {format(item, "dd")}
-        </P>
-        <P color={active ? "secondary" : "primary"}>{format(item, "EEE")}</P>
-      </DateWrapper>
-    );
-  }, []);
+  const renderItem = useCallback(
+    ({ item, index }: { item: Date; index: number }) => {
+      const active = index === selectedId;
+
+      return (
+        <DateWrapper
+          $active={active}
+          onPress={() => {
+            setSelectedId(index);
+            onSelect(item);
+          }}
+        >
+          <P weight="bold" color={active ? "secondary" : "primary"}>
+            {format(item, "dd")}
+          </P>
+          <P color={active ? "secondary" : "primary"}>{format(item, "EEE")}</P>
+        </DateWrapper>
+      );
+    },
+    [selectedId]
+  );
 
   return (
     <FlatList
@@ -39,7 +48,7 @@ function DateSlider({ data, onSelect, selectedDate }: DateSliderProps) {
       keyExtractor={(item) => `${item.getTime()}`}
       horizontal
       inverted
-      extraData={`${selectedDate.getTime()}`}
+      extraData={selectedId}
     />
   );
 }
