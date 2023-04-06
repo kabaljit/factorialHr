@@ -9,7 +9,7 @@ function OptionControl({ title, onPress, name }: OptionControlProps) {
   const uid = useUid("button", `option-control-${name}`);
 
   return (
-    <OptionControlContainer data-testid={uid} onPress={onPress}>
+    <OptionControlContainer testID={uid} onPress={onPress}>
       <Label>{title}</Label>
     </OptionControlContainer>
   );

@@ -161,7 +161,7 @@ export function AddActivityScreen() {
 
   return (
     <>
-      <SuperScreen>
+      <SuperScreen statusBarColor="dark-content">
         <NavigationButton
           name="back"
           onPress={() => navigation.goBack()}

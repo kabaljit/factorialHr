@@ -12,11 +12,11 @@ function Stats({ reports }: StatsProps) {
   const { t } = useModuleTranslations();
 
   if (!reports) {
-    return <StatsContainer data-testid="stats"></StatsContainer>;
+    return <StatsContainer testID="stats"></StatsContainer>;
   }
 
   return (
-    <StatsContainer data-testid="stats">
+    <StatsContainer testID="stats">
       {Object.keys(reports).map((key) => (
         <Stat key={key}>
           <P weight="bold" color="secondary">

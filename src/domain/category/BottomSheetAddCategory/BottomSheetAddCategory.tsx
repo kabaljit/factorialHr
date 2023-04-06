@@ -153,7 +153,7 @@ const BottomSheetAddCategory = forwardRef<
 
   return (
     <BottomSheet
-      data-testid="bottom-sheet-add-category"
+      testID="bottom-sheet-add-category"
       ref={bottomSheetRef}
       index={-1}
       snapPoints={snapPoints}
@@ -222,7 +222,7 @@ const BottomSheetAddCategory = forwardRef<
                   setDeleteMode(true);
                   handleSubmit();
                 }}
-                data-testID="button-delete-category"
+                testID="button-delete-category"
               >
                 <Ionicons name="trash" size={24} color="white" />
               </DeleteTouchableOpacity>

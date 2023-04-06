@@ -56,6 +56,7 @@ export function CategoriesScreen() {
       />
     );
   }, []);
+
   const EmptyState = useCallback(
     () => (
       <>
@@ -68,7 +69,7 @@ export function CategoriesScreen() {
 
   return (
     <>
-      <SuperScreen background="white">
+      <SuperScreen background="white" statusBarColor="dark-content">
         {categories.isLoading && <ActivityIndicator />}
 
         <FlatList

@@ -27,7 +27,7 @@ const BottomSheetWithOptions = forwardRef<
 
   return (
     <BottomSheet
-      data-testid="bottom-sheet-with-options"
+      testID="bottom-sheet-with-options"
       ref={bottomSheetRef}
       index={-1}
       snapPoints={snapPoints}
