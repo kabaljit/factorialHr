@@ -108,7 +108,7 @@ const Box = forwardRef<View, BoxPropsExtended>((props, ref) => {
     <BoxContainer
       ref={ref}
       $parsedCss={parsedProps}
-      data-testid={`${name}-box`}
+      testID={`${name}-box`}
       {...rest}
     >
       {children}

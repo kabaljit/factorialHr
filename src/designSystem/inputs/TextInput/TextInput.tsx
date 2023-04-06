@@ -39,6 +39,7 @@ function TextInput({
         ? {
             right: (
               <RNPaperTextInput.Icon
+                testID="toggle-password-icon"
                 icon={secureTextEntry ? "eye" : "eye-off"}
                 onPress={() => setSecureTextEntry(!secureTextEntry)}
               />

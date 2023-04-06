@@ -1,8 +1,11 @@
-import { CSSProperties } from 'react';
+import { CSSProperties } from "react";
 
-import { Sizes } from '@theme/tokens';
+import { Sizes } from "@theme/tokens";
+import { View } from "react-native";
 
-export interface BoxPropsExtended extends React.HTMLAttributes<HTMLDivElement>, Partial<BoxProps> {
+export interface BoxPropsExtended
+  extends React.HTMLAttributes<View>,
+    Partial<BoxProps> {
   /**
    * Name to use for data test id
    */
@@ -78,48 +81,48 @@ export interface BoxProps {
    * Display
    * @see — https ://developer.mozilla.org/docs/Web/CSS/display
    */
-  display: CSSProperties['display'];
+  display: CSSProperties["display"];
   /**
    * Justify content
    * @see — https ://developer.mozilla.org/docs/Web/CSS/justify-content
    */
-  justifyContent: CSSProperties['justifyContent'];
+  justifyContent: CSSProperties["justifyContent"];
   /**
    * Align items
    * @see — https ://developer.mozilla.org/docs/Web/CSS/align-items
    */
-  alignItems: CSSProperties['alignItems'];
+  alignItems: CSSProperties["alignItems"];
   /**
    * Align content
    * @see — https ://developer.mozilla.org/docs/Web/CSS/align-content
    */
-  alignContent: CSSProperties['alignContent'];
+  alignContent: CSSProperties["alignContent"];
   /**
    * Align self
    *
    * @see — https ://developer.mozilla.org/docs/Web/CSS/align-self
    */
-  alignSelf: CSSProperties['alignSelf'];
+  alignSelf: CSSProperties["alignSelf"];
   /**
    * Flex wrap
    * @see — https ://developer.mozilla.org/docs/Web/CSS/align-wrap
    */
-  flexWrap: CSSProperties['flexWrap'];
+  flexWrap: CSSProperties["flexWrap"];
   /**
    * Flex direction
    * @see — https ://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
-  flexDirection: CSSProperties['flexDirection'];
+  flexDirection: CSSProperties["flexDirection"];
   /**
    * Flex
    * @see — https ://developer.mozilla.org/docs/Web/CSS/flex
    */
-  flex: CSSProperties['flex'];
+  flex: CSSProperties["flex"];
   /**
    * Position
    * @see — https ://developer.mozilla.org/docs/Web/CSS/position
    */
-  position: CSSProperties['position'];
+  position: CSSProperties["position"];
   /**
    * Position Absolute - Top
    *
