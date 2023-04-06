@@ -18,13 +18,13 @@ function NavigationButton(props: NavigationButtonProps) {
 
   return (
     <StyledNavigationButton
-      data-testid={uid}
+      testID={uid}
       $inline={inline}
       $safeAreaInsetsTop={safeAreaInsetsTop}
       {...rest}
     >
       <BackContainer>
-        <Ionicons name="arrow-back" size={24} color="black" />
+        <Ionicons testID={`${uid}-chevron-left`} size={24} color="black" />
       </BackContainer>
     </StyledNavigationButton>
   );
