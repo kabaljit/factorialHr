@@ -67,7 +67,7 @@ function SuperScreen(props: SuperScreenProps) {
 
   return (
     <SuperScreenContainer
-      data-testid="superScreen"
+      testID="super-screen"
       background={background}
       flex={flex}
     >

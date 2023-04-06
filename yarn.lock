@@ -6560,6 +6560,11 @@ jest-mock@^29.5.0:
     "@types/node" "*"
     jest-util "^29.5.0"
 
+jest-native@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/jest-native/-/jest-native-3.0.0.tgz#359d746fae6a36458e494952da998d9b9a747356"
+  integrity sha512-bvqfL1rnVzPorGUne0LWQMyiFFf5yitHYqQMmCPPq350AwwASzhOcxuuYZ4VkWPTHAK/o/JuRTJFt0TbMJ+F+Q==
+
 jest-pnp-resolver@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/jest-pnp-resolver/-/jest-pnp-resolver-1.2.3.tgz#930b1546164d4ad5937d5540e711d4d38d4cad2e"

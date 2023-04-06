@@ -25,7 +25,7 @@ import {
   useFirestoreCollectionMutation,
   useFirestoreQueryData,
 } from "@react-query-firebase/firestore";
-import BottomSheetWithOptions from "@domain/activity/BottomSheetWithOptions";
+import BottomSheetWithOptions from "@domain/activity/addActivityScreen/components/BottomSheetWithOptions";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { Category } from "@domain/category/models";
 import NavigationButton from "@designSystem/buttons/NavigationButton";
@@ -105,9 +105,9 @@ export function AddActivityScreen() {
       addMutation.mutate(
         {
           title: values.title,
-          category: values.category.name,
-          startTime: formatDate(values.date, values.startTime),
-          endTime: formatDate(values.date, values.endTime),
+          category: values.category?.name,
+          startTime: formatDate(values.date, values?.startTime).getTime(),
+          endTime: formatDate(values.date, values?.endTime).getTime(),
         },
         {
           onSuccess(result) {

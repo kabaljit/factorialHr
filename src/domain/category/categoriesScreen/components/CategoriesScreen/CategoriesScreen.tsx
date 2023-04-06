@@ -56,21 +56,25 @@ export function CategoriesScreen() {
       />
     );
   }, []);
+  const EmptyState = useCallback(
+    () => (
+      <>
+        <Ionicons name="warning" size={24} color="orange" />
+        <P>{t("emptyData")}</P>
+      </>
+    ),
+    []
+  );
 
   return (
     <>
       <SuperScreen background="white">
-        {/* <P color="secondary">{t("welcome")}</P> */}
         {categories.isLoading && <ActivityIndicator />}
-        {categories.isFetched && categories.data?.length == 0 && (
-          <>
-            <Ionicons name="warning" size={24} color="orange" />
-            <P color="secondary">{t("emptyData")}</P>
-          </>
-        )}
+
         <FlatList
           data={categories.data}
           renderItem={({ item }) => renderItem(item)}
+          ListEmptyComponent={EmptyState}
         />
 
         <SecondaryButton

@@ -9,7 +9,7 @@ i18next.addResourceBundle("en-GB", "CategoriesScreen", {
     "Welcome to the best page in the world, leave your breath at the door please",
   button: { addNewCategory: "Add new category" },
   emptyData:
-    "There isn't any project yet, please start by adding a new project",
+    "There isn't any categories yet, please start by adding a new category",
 });
 
 export function useModuleTranslations() {

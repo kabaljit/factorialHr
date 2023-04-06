@@ -24,7 +24,6 @@ const BottomSheetWithOptions = forwardRef<
   );
 
   const snapPoints = useMemo(() => ["50%"], []);
-  console.log("Email", selectedOption);
 
   return (
     <BottomSheet

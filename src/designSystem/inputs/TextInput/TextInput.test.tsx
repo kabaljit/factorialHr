@@ -1,17 +1,17 @@
-import { render } from '@test/utils';
+import { render } from "@testing-library/react-native";
 
-import TextInput from './TextInput';
+import TextInput from "./TextInput";
 
-test('TextInput should render', () => {
+test("TextInput should render", () => {
   const { getByTestId } = render(
     <TextInput firstProp="a" secondProp="b">
       Hello
-    </TextInput>,
+    </TextInput>
   );
 
-  const textInputNode = getByTestId('text-input');
+  const textInputNode = getByTestId("text-input");
 
-  expect(textInputNode.props.children).toBe('Hello');
+  expect(textInputNode.props.children).toBe("Hello");
 });
 
 // TODO: Add your tests
